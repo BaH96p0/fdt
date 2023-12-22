@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    {%csrf_token%}
+    <label >Введите имя ученика</label><br>
+    <input name="name" type="text"> <br>
+
+    <label >Введите фамилию ученика</label><br>
+    <input name="surname" type="text"><br>
+
+    <label >Введите предмет ученика</label><br>
+    <select name="lesson">
+    {%for lesson in lessons%}
+    <option  value="{lesson.id}}">{{lesson.lesson}}</option>
+
+    {%endfor%}
+    </select><br>
+
+
+</form>    <label >Введите оценку ученика</label><br>
+    <select name="grade">
+    {%for grade in grades%}
+    <option  value="{{grade.id}}">{{grade.grade}}</option>
+
+    {%endfor%}
+    </select>
+    <br>
+    <input type="submit">
+
+
+
+
+
+</body>
+</html>
